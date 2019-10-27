@@ -1,0 +1,840 @@
+/**
+CONTENTS:
+Body, fonts, containers, buttons, images, footer
+********************************** BODY **/
+body{
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 22px;
+ color: white;
+ height:100%;
+ margin:0;
+ background-size: 100%;
+ background-color: black;
+}
+#loggedin{
+background-image: url(img/coffeetable.png);
+background-repeat:no-repeat;
+background-position: top;
+background-attachment: fixed;
+background-size: cover;
+}
+#bk2{
+  background-image: url(img/coffee1.png);
+  background-repeat:no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  background-size: cover;
+}
+#orderh{
+  width:100%;
+  background-color: #F4DECB;
+}
+#orderh img{
+  width:20%;
+}
+#vid{
+  background-image: none;
+}
+/* Video */
+#video {
+  visibility: visible;
+  opacity: 0.7;
+  position:fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -2;
+  background-size: cover;
+}
+/******************************** FONTS */
+@font-face {
+    font-family: 'Cantarell';
+    src: url('fonts/Cantarell-Regular.woff2') format('woff2'),
+        url('fonts/Cantarell-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Kaushan';
+    src: url('fonts/Kaushan.woff2') format('woff2'),
+        url('fonts/Kaushan.woff') format('woff');
+}
+@font-face {
+    font-family: 'omega_sansregular';
+    src: url('fonts/omegasansregular-webfont.woff2') format('woff2'),
+         url('fonts/omegasansregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+h1{
+  font-family: 'Kaushan';
+  text-align: left;
+  font-size: 60px;
+  transform: rotate(-10deg);
+}
+h2{
+  font-family: 'omega_sansregular';
+  font-size: 40px;
+  color: white;
+}
+h3{
+  font-family: 'omega_sansregular';
+  font-size: 35px;
+  margin: 10px 0px;
+  color: white;
+  text-align: center;
+}
+h4{
+  font-family: 'omega_sansregular';
+  font-size: 26px;
+  margin: 8px 0px;
+  color: white;
+}
+h5{
+  font-family: 'omega_sansregular';
+  font-size: 22px;
+  margin-right: 20px;
+  color: black;
+}
+#thankyou{
+  padding:20%;
+}
+#errors{
+  color:red;
+}
+#pwd{
+  font-size: 18px;
+  color:lightgray;
+}
+a{
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+p{
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'omega_sansregular';
+}
+#containernav a{
+  position:relative;
+}
+#containernav a:after {
+  background: none;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: lightgray;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+  display: block;
+  cursor: pointer;
+}
+#containernav a:hover:after {
+  width: 100%;
+  left: 0;
+}
+#containernav h1{
+  color: black;
+  font-size: 20px;
+  line-height: 20px;
+}
+#containernav h1:hover{
+  color:#a2abba;
+}
+#containernav a{
+  padding-left: 1%;
+  font-size: 22px;
+}
+#current{
+  font-weight: 600;
+}
+#coffeeSelection2 p, #coffeeSelection3 p, #donutSelection p {
+  text-align: left;
+  color: black;
+  font-size: 25px;
+  padding-left: 5px;
+}
+#coffeeSelection h4, #coffeeSelection2 h4, #coffeeSelection3 h4,  #donutSelection h4{
+  color: #303030;
+  font-size: 26px;
+  text-align: center;
+}
+#options li{
+  color: white;
+}
+#coffeeSelection2 h3{
+  text-align: center;
+}
+footer p{
+  padding:2%;
+}
+nav h3{
+  font-size: 20px;
+  font-family: 'omega_sansregular';
+}
+#icons .logout {
+  visibility: hidden;
+  width: 100px;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+#icons:hover .logout {
+  visibility: visible;
+}
+#icons:hover img {
+  visibility: hidden;
+}
+#close img{
+  opacity:0.95;
+  margin:1% 4% 0 4%;
+  width:18px;
+}
+#arrow img{
+  margin: 2% 0 0 2%;
+  width:25px;
+}
+#close img:hover {
+    opacity:0.80;
+    -moz-transform: rotate(-95deg);
+    -webkit-transform: rotate(-55deg);
+    -o-transform: rotate(-55deg);
+    -ms-transform: rotate(-55deg);
+    -webkit-transform: rotate(-55deg);
+    transform: rotate(-55deg);
+    -webkit-transition: transform 0.2s ease-in-out;
+    -moz-transition:transform 0.2s ease-in-out;
+    -ms-transition:transform 0.2s ease-in-out;
+}
+
+.login, .signup, .forgotpwd input{
+  color: white;
+  font-size: 20px;
+}
+.login, .signup, .forgotpwd label{
+  font-family: 'omega_sansregular';
+}
+.login input[type=text]::placeholder, input[type=password]::placeholder{
+  color:#010a12;
+  font-size: 20px;
+}
+.signup input[type=text]::placeholder, input[type=email]::placeholder, input[type=password]::placeholder{
+  color:#010a12;
+  font-size: 20px;
+}
+/***************************  CONTAINERS */
+#viewMenu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  background-image: url(img/coffeetable9.png);
+  background-repeat:no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  background-size: cover;
+}
+#ordernow{
+  visibility: hidden;
+}
+#line{
+  visibility: visible;
+}
+#icons{
+  width:100px;
+  height:50px;
+  cursor: pointer;
+}
+nav{
+  justify-content: center;
+  width: 100%;
+  display: inline-flex;
+  margin:auto;
+}
+#logo{
+  width:100%;
+  display:inline-flex;
+}
+header{
+  text-align: center;
+  width: 100%;
+}
+.container{
+  min-height: 200px;
+  padding: 2%;
+  width:100%;
+  cursor: pointer;
+  margin: auto;
+  margin-bottom: 0;
+  color: black;
+  text-align: center;
+}
+/** login/signup **/
+.container1{
+  opacity:0.8;
+  min-height: 400px;
+  padding: 0 2% 2% 2%;
+  width:100%;
+  cursor: pointer;
+  margin: auto;
+  margin-bottom: 0;
+  color: black;
+  text-align: center;
+}
+/** bkground menu page
+background-color: #0A152E;**/
+.container2{
+  justify-content: center;
+  display: inline-flex;
+  width: 100%;
+  max-height: 5%;
+  color: black;
+  text-align: center;
+}
+.genContent{
+  justify-content: center;
+  text-align: center;
+  color: black;
+}
+/** SIGNUP/ LOGIN **/
+.login, .signup, .forgotpwd {
+  padding: 1% 2% 8% 2%;
+  display:none;
+}
+.signup input[type=text], input[type=password], input[type=email]{
+  width: 300px;
+  height: 35px;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.login input[type=text], input[type=password]{
+  width: 300px;
+  height: 35px;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.coffeeAdditions{
+  padding: 0px 8%;
+  margin: 5px 2px 0 5px;
+  text-align: left;
+  line-height: 36px;
+  font-family: 'Cantarell';
+}
+.coffeeAdditions input[type=checkbox]{
+  float: right;
+  width: 18px;
+  height: 18px;
+}
+.coffeeAdditions input[type=number]{
+  float: right;
+  width: 50px;
+  height: 18px;
+  text-align: center;
+  border-radius: 5px;
+  padding:2%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.coffeeAdditions input[type=number]::-webkit-inner-spin-button,
+.coffeeAdditions input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.coffeeAdditions select{
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: left;
+  width: 100%;
+  font-size: 18px;
+  padding: 3% 5% 3% 5%;
+  border: 1px solid lightgray;
+}
+#main{
+  width: 80%;
+  margin:auto;
+  }
+/*** NAV
+  background-color: rgba(177, 149, 132, 0.4);*/
+#containernav{
+  justify-content: center;
+  width:100%;
+  margin:auto;
+  top: 0;
+  z-index: 4;
+  float left;
+  display: flex;
+}
+
+#welcome{
+  float:right;
+  padding:2.5% 0 2% 0;
+  width:15%;
+}
+/** select coffee options box
+background-color: rgba(177, 149, 132, 0.7);**/
+#coffeeSelection, #coffeeSelection2, #coffeeSelection3,  #donutSelection{
+  color: #2A0A0A;
+  background-color: rgba(177, 148, 132, 0.9);
+  width:35%;
+  height: auto;
+  margin: 3% 2.5%;
+  font-weight: 550;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation: fadein 1.2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 1.2s; /* Firefox < 16 */
+      -ms-animation: fadein 1.2s; /* Internet Explorer */
+       -o-animation: fadein 1.2s; /* Opera < 12.1 */
+          animation: fadein 1.2s;
+}
+#coffeeSelection3{
+  background-color: rgba(255, 255, 255, 0.7);
+}
+  @keyframes fadein {
+      from { opacity: 0.1; }
+      to   { opacity: 1; }
+  }
+  /* Firefox < 16 */
+  @-moz-keyframes fadein {
+      from { opacity: 0.1; }
+      to   { opacity: 1; }
+  }
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes fadein {
+      from { opacity: 0.1; }
+      to   { opacity: 1; }
+  }
+  /* Internet Explorer */
+  @-ms-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+  /* Opera < 12.1 */
+  @-o-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+#coffeeTypes{
+  width:100%;
+  margin: 0px;
+  float:left;
+  font-family: 'Cantarell';
+}
+#coffeeTypes label {
+    float:left;
+    width:100%;
+    margin: 0px;
+    overflow:none;
+}
+#coffeeTypes label span {
+    text-align:center;
+    padding: 1% 10%;
+    font-size: 22px;
+    line-height: 68px;
+    height: 65px;
+    display:block;
+    margin-bottom: 1%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#coffeeTypes label span:hover {
+  cursor: pointer;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#coffeeTypes label input {
+  display: none;
+  position:absolute;
+  top:-20px;
+}
+#coffeeTypes input:checked + span {
+  background-color:#404040;
+  color:#F7F7F7;
+}
+#options{
+  text-align: center;
+  width:200px;
+  background-color: #e1e8e5;
+}
+#orderItems{
+  display:flex;
+  margin: 0 7.5%;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  overflow-y: scroll;
+  width: 85%;
+  height: 160px;
+  overflow: wrap;
+}
+.orderItem{
+  font-weight: 400;
+  position: relative;
+  background-color: none;
+  font-size: 20px;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 1.5% 2% 1.5% 2%;
+  width: 100%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.4);
+  line-height: 35px;
+  margin: 5px 0;
+}
+#coffeeSelection input[type="date"], input[type="number"]{
+  height: 15px;
+  text-align: left;
+  border-radius: 1px;
+  padding:2%;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 84px;
+}
+#coffeeSelection input[type="text"]{
+  height: 15px;
+  text-align: left;
+  border-radius: 1px;
+  padding:2%;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 200px;
+}
+#donutSelection input[type="radio"] {
+    display:none;
+}
+
+#donuts{
+  margin-bottom:150px;
+}
+/**************************** BUTTONS */
+.orderItem button{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin: -16px 1% 0 1%;
+  width: 32px;
+  height: 32px;
+  color: black;
+  font-size: 18px;
+  background: none;
+  border:none;
+  cursor:pointer;
+}
+.btn-group{
+  width: 100%;
+  display:inline-block;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.btn-group.menu-page{
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  margin: 0 auto;
+}
+.btn-group button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 20px;
+  width: 200px;
+  text-align: center;
+  font-size: 22px;
+  cursor: pointer;
+}
+.btn-group button:hover {
+  color: gray;
+  background-color:rgba(255, 255, 255, 0.8);
+}
+.closebtn{
+  float:right;
+  padding: 1% 1%;
+  overflow:hidden;
+}
+
+#btn2{
+  width:130px;
+  color: white;
+}
+#btn2{
+  width:200px;
+  color: white;
+}
+#btn3{
+  background-color:white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border:none;
+  color:rgba(177, 148, 132);
+  border-radius:1.5px;
+}
+#btn3:hover{
+  color: lightgray;
+}
+#confirmOrder{
+  background-color:white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border:none;
+  color:rgba(177, 148, 132);
+  border-radius:1.5px;
+}
+#confirmOrder:hover{
+  color: lightgray;
+}
+/**  background: #e6c59a;**/
+#containernav button{
+  border: none;
+  color: black;
+  padding: 1%;
+  width:10%;
+  background: none;
+  border-radius: 0.9;
+  cursor: pointer;
+}
+#loginbutton a button{
+  border:none;
+  color: black;
+}
+#addMore{
+  visibility: hidden;
+}
+/************************ DROPDOWN */
+.coffeeSize {
+    font-size: 18px;
+    padding: 2% 5% 2% 5%;
+    background-color: #e1e8e5;
+    background-image: url('img/dropdownarrow.png');
+    background-repeat: no-repeat;
+    background-position: 94% 50%;
+    background-size: 5%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid lightgray;
+}
+/***************************** IMAGES */
+header img{
+  width:8%;
+}
+#logo img{
+  padding: 2% 0 0 4%;
+  height: 120px;
+}
+#logo img:hover{
+  opacity:0.6;
+  cursor:pointer;
+}
+#icons{
+  padding: 2%;
+}
+#icons img{
+  width:35px;
+  height:35px;
+  margin:1%;
+  float: right;
+}
+#icons img:hover{
+  opacity:0.8;
+}
+/***************************** FOOTER */
+footer{
+  position: relative;
+  width: 100%;
+  height:auto;
+  margin-top: 300px;
+  margin-bottom: 0;
+  bottom:0;
+  background-color: #010a12;
+  color:lightgray;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+footer a{
+  opacity: 0.8;
+}
+span{
+  display: block;
+}
+/**************************** Tables */
+#orderHistory{
+  margin: 0 2%;
+  padding: 2% 0;
+}
+table {
+  width:100%;
+  padding: 5%;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  border-radius: 3px;
+}
+th {
+  color: white;
+  font-family: 'omega_sansregular';
+}
+td {
+  background-color:rgba(255, 255, 255, 0.5);
+  font-family: 'Cantarell';
+  margin-bottom: 1%;
+}
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+/*************************** Specials #010a12;*/
+#special{
+  cursor:pointer;
+  width:100%;
+  min-height: 80px;
+  background-color: rgba(1,10,18, 0.8);
+  display:block;
+}
+
+#special h4{
+  padding-top: 1%;
+  font-size: 22.5px;
+}
+/*************************** Loyalty */
+#loyaltyDiv
+{
+  width: 90%;
+  height: 30px;
+  margin: 5px auto;
+  display: inline-flex;
+  justify-content: center;
+}
+#loyaltySquare
+{
+  width: 20px;
+  height: 20px;
+  margin: 5px 0 5px auto;
+  border-radius: 2px;
+}
+.filled
+{
+  background-color: black;
+}
+.empty
+{
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+.orderItem{
+  height: 50px;
+  line-height: normal;
+  padding: 5px;
+}
+#arrow{
+  z-index:4;
+  display:block;
+}
+#specialsOpen{
+  display: none;
+}
+/***** MEDIA QUERIES ****/
+@media only screen and (max-width: 1100px) {
+  .btn-group button {
+    width: 180px;
+    font-size: 20px;
+  }
+  #containernav a{
+    padding-left: 4%;
+    font-size: 18px;
+  }
+  #containernav button{
+    width:18%;
+  }
+  #coffeeTypes label span {
+      padding-bottom:5%;
+      margin-bottom: 1%;
+      font-size: 14px;
+      line-height: 50px;
+      height: 50px;
+  }
+  #special{
+    padding: 1% 2% 2% 2%;
+    font-size: 16px;
+    display:flex;
+    flex:wrap;
+    height:auto;
+    overflow: auto;
+  }
+  .btn-group.menu-page{
+    position:relative;
+    margin-top: 2%;
+  }
+  #main{
+    width:95%;
+  }
+  #coffeeSelection, #coffeeSelection2, #coffeeSelection3,  #donutSelection{
+    min-width: 400px;
+    margin:2%;
+    overflow:hidden;
+  }
+  .container2{
+    display:flex;
+    flex-wrap: wrap;
+  }
+  #donuts{
+    margin-bottom:50px;
+  }
+  table {
+    padding: 2%;
+    display:flex;
+    flex-wrap: wrap;
+    width:auto;
+  }
+  td, th {
+    flex-wrap: wrap;
+    width:auto;
+    overflow-y: scroll;
+  }
+  h3{
+    font-size: 28px;
+  }
+  h4{
+    font-size: 26px;
+    margin: 5px 0px;
+  }
+  p{
+    font-size: 18px;
+  }
+  .btn-group{
+    width:90%;
+  }
+  #vid{
+    background-image: url(img/CoffeeVidmobile1.jpg);
+    background-repeat:no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  #video {
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #arrow{
+    display:none;
+  }
+  .coffeeAdditions label{
+    font-size: 14px;
+  }
+  .btn-group button {
+    font-size: 18px;
+  }
+
+}
+@media only screen and (max-width: 590px) {
+  .coffeeAdditions label{
+    font-size: 10px;
+  }
+  .btn-group button {
+    font-size: 14px;
+  }
+  table {
+    padding: 1%;
+    font-size: 18px;
+  }
+}

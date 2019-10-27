@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coffee shop - Balance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS stylesheet -->
+    <link href="css/coffeestyle.css" rel="stylesheet" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/login.js"></script>
+</head>
+<body  id="loggedin" onload="getInfo()">
+
+    <!-- Logo/ Icons -->
+    <nav>
+      <div id="logo">
+        <a href="home.html"><img src="css/img/logo_agile2.png" alt="Logo"></a>
+      </div>
+      <h3 id="welcome"></h3>
+      <div id="icons">
+        <a href="thankYou.html"> <p class="logout">Logout</p>
+        <img src="css/img/logouticon.png" alt="Log-out"></a>
+      </div>
+    </nav>
+
+    <!-- Nav -->
+    <div id="containernav">
+      <button><a href="home.html">Menu</a></button>
+      <button><a id="current" href="balance.html">Balance</a></button>
+      <button><a href="topUpPage.html">Top Up</a></button>
+      <button><a href="orderHistory.html">Orders</a></button>
+    </div>
+    <!-- White line-->
+    <hr style="border: 0.4px solid lightgray; width: 50%; opacity:0.8;" />
+
+    <!-- Main container -->
+    <div class="container2">
+      <br><br><h3>Balance</h3><br>
+    </div>
+    <div class="container2">
+      <!-- Top Up -->
+      <div id="coffeeSelection" style="padding: 30px">
+        <div class="genContent" style="color: black;">
+          <h4 style="font-size: 22px;" id="userName"></h4>
+          <h4 id="balance"></h4>
+          <h4 id="coffeesBought"></h4><br><br>
+          <div id="loyaltyDiv">
+            <div id="loyaltySquare" class="filled"></div>
+            <div id="loyaltySquare" class="filled"></div>
+            <div id="loyaltySquare" class="filled"></div>
+            <div id="loyaltySquare" class="filled"></div>
+            <div id="loyaltySquare" class="filled"></div>
+            <div id="loyaltySquare" class="filled"></div>
+            <div id="loyaltySquare" class="filled"></div>
+            <div id="loyaltySquare" class="empty"></div>
+            <div id="loyaltySquare" class="empty"></div>
+            <div id="loyaltySquare" class="empty"></div>
+          </div>
+            <p id="freeCoffees"></p>
+        </div>
+      </div>
+    </div>
+
+  <!--    Footer  -->
+  <div class="container2">
+    <footer>
+    <p>&copy; Café Loja 2019 <br><br><br>
+    <a href="loginmanager.html">Manager Login</a>
+    </footer>
+  </div>
+    <!--    Javacsript  -->
+  <script type="text/javascript" src="scripts/Session.js"></script>
+  <script type="text/javascript" src="scripts/balance.js"></script>
+
+</body>
+</html>

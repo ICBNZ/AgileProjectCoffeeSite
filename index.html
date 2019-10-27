@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coffee shop - Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS stylesheet -->
+    <link href="css/coffeestyle.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+<body id="vid" onload="onLoad()">
+
+
+    <!--    Video  -->
+    <video autoplay muted loop id="video" preload="metadata" poster="css/img/CoffeeVid.jpg">
+      <source src="css/vids/Coffee-Vid.mp4" type="video/mp4" alt="CoffeeVideo">
+    </video>
+
+    <!-- Menu -->
+    <div id="viewMenu">
+      <!-- Specials -->
+      <div id="anchor">
+        <div id="special">
+          <h4 id="specialSpan"></h4>
+          </div>
+      </div>
+      <!-- Close -->
+      <a id="close" href="javascript:void(0)" onclick="closeMenu()">
+        <img  src="css/img/closebtn1.png"></a>
+
+        <h3>Menu</h3><br><br>
+          <!-- Main container -->
+          <div id="main">
+            <div class="container2">
+      	        <div id="coffeeSelection">
+    	            <h4>Coffee</h4>
+                  <div id="coffeeTypes">
+    	                <label><input type="radio" name="toggle" value="Black Coffee"><span>Black Coffee</span></label>
+    	                <label><input type="radio" name="toggle" value="Flat White"><span>Flat White</span></label>
+    	                <label><input type="radio" name="toggle" value="Cappuccino"><span>Cappuccino</span></label>
+    	                <label><input type="radio" name="toggle" value="Hot Chocolate"><span>Hot Chocolate</span></label>
+    	                <label><input type="radio" name="toggle" value="Mochaccino"><span>Mochaccino</span></label>
+    	                <label><input type="radio" name="toggle" value="Latte"><span>Latte</span></label>
+    	            </div>
+                </div>
+                <div id="coffeeSelection2">
+                    <h4>Options</h4>
+                    <!-- White line-->
+                    <hr style="border: 0.4px solid lightgray; width: 100%; opacity:0.8;" />
+                    <div class="coffeeAdditions">
+                        <p>Extras:</p>
+                        <label>Add Sugar</label><br>
+                        <label>Add Milk</label>
+                    </div>
+                    <div class="coffeeAdditions">
+                            <p>Prices:</p>
+                            <label>Regular: &nbsp$4.5</label><br>
+                            <label value="Small">Small: &nbsp$3.0</label>
+                        </div><br>
+                    <div class="btn-group">
+                        <a id="loginbutton" href="index.html"><button>Sign Up/Login</button></a>
+                   </div>
+                </div>
+
+          </div>
+        </div><br><br>
+    </div>
+    <!-- End of Menu -->
+
+  <!-- Order Now -->
+    <!--    Logo  -->
+    <div id="logo">
+      <img src="css/img/logo_agile2.png" alt="Logo">
+    </div>
+
+    <!--    Header -->
+    <header><br>
+      <!--    View Menu/Order Now  -->
+       <a onclick="openMenu()"><h2 id="vmenu" onclick="movingSpecial()">View Menu</h2></a>
+       <a onclick="orderNow()"><h2 id="on">Order Now</h2></a>
+       <!-- White line-->
+       <hr id="line" style="border: 0.4px solid lightgray; width: 10%; opacity:0.8;" />
+      <!--      <img src="css/img/arrowicon.png" alt="arrow"> -->
+    </header>
+
+    <!--    Forms  -->
+    <div id="ordernow">
+      <div class="container1">
+        <!--    buttons  -->
+        <div class="btn-group" id="btn1">
+          <a href="#" onclick="return false;"><button>Login</button></a>
+          <a href="#" onclick="return false;"><button>Signup</button></a>
+        </div>
+
+        <!--    Login  -->
+        <div class="btn-group">
+            <div class="login">
+              <label id="l-errors"></label>
+              <p><input type="text" id="l-username" placeholder="username"></input></p>
+              <p><input type="password" id="l-password" placeholder="password"></input></p>
+              <button id="btn2" type="button" onclick="loginButton()">Enter</button>
+              <br><label id="pwd"><a>Forgot Password?</a></label>
+            </div>
+           <!--    Signup  -->
+          <div class="signup">
+            <label id="s-errors"></label>
+            <p><input type="text" id="s-username" placeholder="username"></input></p>
+            <p><input type="email" id="s-email" placeholder="email"></input></p>
+            <p><input type="password" id="s-password" placeholder="password"></input></p>
+            <button id="btn2" id="sign" type="button" onclick="signupButton()">Create Account</button>
+          </div>
+          <!--    Forgot Password  -->
+          <div class="forgotpwd">
+              <label id="errors"></label>
+              <p><input type="email" id="email" placeholder="email"></input></p>
+              <button id="btn4" type="button" onclick="buttonClick()">Reset</button>
+              <br><br>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--    Footer  -->
+    <div class="container2">
+      <footer>
+      <p>&copy; Café Loja 2019 <br><br><br>
+      </footer>
+    </div>
+
+    <!--    Javascript  -->
+
+    <script type="text/javascript" src="scripts/login.js"></script>
+    <script type="text/javascript" src="scripts/Session.js"></script>
+    <script type="text/javascript" src="scripts/Models/User.js"></script>
+    <script type="text/javascript" src="scripts/Models/Order.js"></script>
+    <script type="text/javascript" src="scripts/menuPage.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coffee shop - Coffee</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS stylesheet -->
+    <link href="css/coffeestyle.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+<body id="bk2" onload="pageSetup()">
+
+  <!-- Specials -->
+  <a id="arrow" href="javascript:void(0)" class="closebtn">
+  <img src="css/img/arrowspecials.png"></a>
+  <div id="anchor">
+    <div id="special">
+      <h4 id="specialSpan"></h4>
+      </div>
+  </div>
+
+
+  <!-- Logo/ Icons -->
+  <nav>
+      <div id="logo">
+        <a href="home.html"><img src="css/img/logo_agile2.png" alt="Logo"></a>
+      </div>
+
+      <h3 id="welcome"></h3>
+      <div id="icons">
+        <a href="thankYou.html"> <p class="logout">Logout</p>
+        <img src="css/img/logouticon.png" alt="Log-out"></a>
+      </div>
+  </nav>
+
+  <!-- Nav -->
+  <div id="containernav">
+        <button><a id="current" href="#">Menu</a></button>
+        <button><a href="balance.html">Balance</a></button>
+        <button><a href="topUpPage.html">Top Up</a></button>
+        <button><a href="orderHistory.html">Orders</a></button>
+        <button id="specialsOpen"><a href="#">Specials</a></button>
+  </div>
+
+  <!-- White line-->
+  <hr style="border: 0.4px solid lightgray; width: 80%; opacity:0.8;" />
+
+    <br><h3>Menu</h3><br><br>
+    <!-- Main container -->
+    <div id="main">
+	    <div class="container2">
+	        <!-- Choose Coffee -->
+	        <div id="coffeeSelection">
+	            <h4>Coffee</h4>
+               <div id="coffeeTypes">
+	                <label><input type="radio" name="coffees" value="Black Coffee"><span>Black Coffee</span></label>
+	                <label><input type="radio" name="coffees" value="Flat White"><span>Flat White</span></label>
+	                <label><input type="radio" name="coffees" value="Cappuccino"><span>Cappuccino</span></label>
+	                <label><input type="radio" name="coffees" value="Hot Chocolate"><span>Hot Chocolate</span></label>
+	                <label><input type="radio" name="coffees" value="Mochaccino"><span>Mochaccino</span></label>
+	                <label><input type="radio" name="coffees" value="Latte"><span>Latte</span></label>
+	            </div>
+	        </div>
+
+          <div id="donutSelection" style="display:none; position: relative">
+	            <h4>Add A Doughnut</h4>
+               <div id="coffeeTypes">
+	                <label><input type="radio" name="donuts" value="Plain doughnut" onclick="updateDonutPrice()"><span>Plain $2.5</span></label>
+                  <label><input type="radio" name="donuts" value="Chocolate doughnut" onclick="updateDonutPrice()"><span>Chocolate $3.5</span></label>
+	                <label><input type="radio" name="donuts" value="Strawberry doughnut" onclick="updateDonutPrice()"><span>Strawberry $3.5</span></label>
+	            </div>
+              <hr style="border: 0.4px solid lightgray; width: 100%; opacity:0.8;" />
+		        <div class="coffeeAdditions" id="donuts">
+	            <label>Quantity:</label>
+	            <input id="donutQuantity" value="1" type="Number" min="1" step="1" placeholder="1" onchange="validateQuantity(this)">
+              <br><label>Cost</label>
+              <label id="donutPrice" style="float: right; text-align: right">$0.0</label>
+            </div>
+	            <!-- Add to Cart -->
+	            <div class="btn-group menu-page">
+	                <button type="Submit" onclick="addCoffeeToCart()">Add To Order</button><br>
+                  <button type="Submit" id="addMore" style="margin-top: 5px">Update Coffees</button>
+	            </div>
+	        </div>
+
+            <div id="coffeeSelection2" style="position: relative">
+                <h4>Options</h4>
+              <!-- White line-->
+                <hr style="border: 0.4px solid lightgray; width: 100%; opacity:0.8;" />
+	            <div class="coffeeAdditions">
+		            <label>Extra Sugar</label>
+		            <input id="sugar" value="true" type="checkbox">
+  		        </div>
+  		        <div class="coffeeAdditions">
+  		            <label>Extra Milk</label>
+  		            <input id="milk" value="true" type="checkbox">
+  		        </div><br>
+  		        <div class="coffeeAdditions">
+			        <select class="coffeeSize" id="coffeeSize" style="margin-left: -3px" onchange="updateCoffeePrice()">
+                  <option value="" disabled selected><p>Size</p></option>
+	                <option value="Regular">Regular - $4.5</option>
+	                <option value="Small">Small - $3.0</option>
+	            </select>
+		        </div><br>
+
+		        <div class="coffeeAdditions">
+	            <label>Quantity:</label>
+	            <input id="quantity" value="1" type="Number" min="1" step="1" placeholder="1" onchange="validateQuantity(this)">
+	          </div><br>
+            <!-- White line-->
+              <hr style="border: 0.3px solid lightgray; width: 100%;" />
+		        <div class="coffeeAdditions">
+	            <label>Cost</label>
+	            <label id="coffeePrice" style="float: right; text-align: right">$0.0</label>
+	        </div><br>
+	            <!-- Add to Cart -->
+	            <div class="btn-group menu-page">
+	                <button type="Submit" onclick="addCoffeeToCart()">Add To Order</button>
+	            </div>
+	        </div>
+
+	        <!-- Display Order Items -->
+	        <div id="coffeeSelection3" style="position: relative">
+	            <h4>Order</h4>
+            <div id="orderItems">
+            </div><br>
+              <div class="coffeeAdditions">
+                    <label>Order Total</label>
+                    <label id="displayTotal"style="float: right; text-align: right">$0.0</label>
+                </div>
+                <div class="coffeeAdditions">
+                  <label>Remaining Balance</label>
+                    <label id="userBalance"style="float: right; text-align: right">$0.0</label>
+                </div><br>
+              <div class="btn-group menu-page">
+                    <button id="confirmOrder" type="Submit" onclick="switchToDonuts()">Next</button><br>
+                  <button  id="btn3" type="button" onclick="cancelOrder()" style="margin-top: 5px">Cancel</button>
+  		      </div>
+  	      </div>
+	    </div>
+	</div>
+
+  <!--    Footer  -->
+  <div class="container2">
+    <footer>
+    <p>&copy; Café Loja 2019 <br><br><br>
+    <a href="loginmanager.html">Manager Login</a>
+    </footer>
+  </div>
+    <!--    Javascript  -->
+    <script type="text/javascript" src="scripts/Session.js"></script>
+    <script type="text/javascript" src="scripts/Models/Order.js"></script>
+    <script type="text/javascript" src="scripts/menuPage.js"></script>
+
+</body>
+</html>

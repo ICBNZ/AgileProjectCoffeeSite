@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coffee shop - Order History</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS stylesheet -->
+    <link href="css/coffeestyle.css" rel="stylesheet" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/login.js"></script>
+</head>
+<body id="bk2" onload="createOrderHistoryList()">
+  <!-- Logo/ Icons -->
+  <nav>
+      <div id="logo">
+        <img src="css/img/logo_agile2.png" alt="Logo">
+      </div>
+
+      <h3 id="welcome"></h3>
+
+      <div id="icons">
+        <a href="thankYou.html"> <p class="logout">Logout</p>
+        <img src="css/img/logouticon.png" alt="Log-out"></a>
+      </div>
+  </nav>
+
+  <div class="container2">
+    <h3>Current Orders</h3>
+  </div>
+
+  <div id="main">
+    <div id="coffeeSelection" style="width: 100%">
+      <div id="orderHistory">
+        <div class="btn-group">
+        <table id="historyList">
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Items</th>
+            <th>Total Price</th>
+            <th>Current</th>
+          </tr>
+        </table>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!--    Footer  -->
+  <div class="container2">
+    <footer>
+    <p>&copy; Café Loja 2019 <br><br><br>
+    <a href="loginmanager.html">Manager Login</a>
+    </footer>
+  </div>
+
+    <!--    Javascript  -->
+    <script type="text/javascript" src="scripts/Session.js"></script>
+    <script type="text/javascript" src="scripts/Models/Order.js"></script>
+    <script type="text/javascript" src="scripts/manager.js"></script>
+
+</body>
+</html>

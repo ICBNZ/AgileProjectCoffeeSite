@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coffee shop - Top Up Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS stylesheet -->
+    <link href="css/coffeestyle.css" rel="stylesheet" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/login.js"></script>
+</head>
+
+<body id="loggedin">
+  <!-- Logo/ Icons -->
+  <nav>
+      <div id="logo">
+        <a href="home.html"><img src="css/img/logo_agile2.png" alt="Logo"></a>
+      </div>
+      <h3 id="welcome"></h3>
+      <div id="icons">
+        <a href="thankYou.html"> <p class="logout">Logout</p>
+        <img src="css/img/logouticon.png" alt="Log-out"></a>
+      </div>
+  </nav>
+
+  <div id="containernav">
+    <button><a href="home.html">Menu</a></button>
+    <button><a href="balance.html">Balance</a></button>
+    <button><a id="current" href="topUpPage.html">Top Up</a></button>
+    <button><a href="orderHistory.html">Orders</a></button>
+  </div>
+  <!-- White line-->
+  <hr style="border: 0.4px solid lightgray; width: 50%; opacity:0.8;" />
+
+  <div class="container2">
+  <br><br><h3>Top Up</h3><br>
+  </div>
+
+  <!-- Main container -->
+  <div class="container2">
+    <!-- Top Up -->
+    <div id="coffeeSelection"><br>
+      <form>
+        <div class="btn-group">
+            <h4>Amount:&nbsp;&nbsp;
+            <input type="number" id="topupAmount" placeholder="$0"></input></h4><br>
+            <h4>Choose your bank:<h4>
+          <form id="bankChoice"><h5>
+            <input type="radio" id="b1" value="Kiwibank" name="Bank"> KiwiBank</input>&nbsp;
+            <input type="radio" id="b2" value="ANZ" name="Bank"> ANZ</input>&nbsp;
+            <input type="radio" id="b3" value="BNZ" name="Bank"> BNZ</input>&nbsp;
+            <input type="radio" id="b4" value="ASB" name="Bank"> ASB</input>&nbsp;
+          </form></h5>
+          <h4>Bank account details:</h4>
+          <h5><input type="text" id="bankDetails" placeholder="0000-0000-0000-0000" maxlength="16"></input><br><br>
+            <input type="date" id="bankDate" name="expiry" placeholder="MM-YYYY">
+            <input type="text" id="bankCCV" placeholder="CCV" maxlength="3" style="width:11%"></input></h5>
+
+            <div class="btn-group">
+                <button type="button" onclick="checkDetails()">Confirm</button>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+    <!--    Footer  -->
+    <div class="container2">
+      <footer>
+      <p>&copy; Café Loja 2019 <br><br><br>
+      <a href="loginmanager.html">Manager Login</a>
+      </footer>
+    </div>
+
+      <script type="text/javascript" src="scripts/Session.js"></script>
+      <script type="text/javascript" src="scripts/Models/User.js"></script>
+      <script type="text/javascript" src="scripts/topup.js"></script>
+
+</body>
+</html>
